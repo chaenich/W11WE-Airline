@@ -51,4 +51,14 @@ public class Flight {
     public String getDepartureTime() {
         return this.departureTime;
     }
+
+    public int seatsFree() {
+        return this.plane.getCapacityFromEnum() - this.bookedPassengers.size();
+    }
+
+    public void bookInPassenger(Passenger passenger) {
+        if (seatsFree() > 0) {
+            bookedPassengers.add(passenger);
+        }
+    }
 }

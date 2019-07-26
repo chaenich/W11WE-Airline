@@ -8,6 +8,8 @@ import static org.junit.Assert.assertEquals;
 public class FlightTest {
     Passenger passenger1;
     Passenger passenger2;
+    Passenger passenger3;
+    Passenger passenger4;
     ArrayList<Passenger> bookedPassengers;
     Plane plane1;
     Flight flight1;
@@ -69,6 +71,34 @@ public class FlightTest {
     @Test
     public void canGetDepartureTime() {
         assertEquals("18:00", flight1.getDepartureTime());
+    }
+
+    @Test
+    public void canGetNumberOfAvailableSeats() {
+        assertEquals(3, flight1.seatsFree());
+    }
+
+    @Test
+    public void noPassengersBooked() {
+        assertEquals(0, flight1.numberOfBookedPassengers());
+        assertEquals(3, flight1.seatsFree());
+    }
+
+    @Test
+    public void canBookPassenger() {
+        flight1.bookInPassenger(passenger1);
+        assertEquals(1, flight1.numberOfBookedPassengers());
+        assertEquals(2, flight1.seatsFree());
+    }
+
+    @Test
+    public void willNotBookPassengerIfFull() {
+        flight1.bookInPassenger(passenger1);
+        flight1.bookInPassenger(passenger2);
+        flight1.bookInPassenger(passenger3);
+        flight1.bookInPassenger(passenger4);
+        assertEquals(3, flight1.numberOfBookedPassengers());
+        assertEquals(0, flight1.seatsFree());
     }
 }
 
