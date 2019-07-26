@@ -13,7 +13,6 @@ public class Plane {
         return this.plane.getCapacity();
     }
 
-
     public int getWeightFromEnum() {
         return this.plane.getWeight();
     }

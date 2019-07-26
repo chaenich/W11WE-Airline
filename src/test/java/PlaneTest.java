@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class PlaneTest {
-    public Plane plane1;
+    Plane plane1;
 
     @Before
     public void before() {
@@ -12,7 +12,7 @@ public class PlaneTest {
     }
 
     @Test
-    public void canGetPlane() {
+    public void canGetPlaneType() {
         assertEquals(PlaneType.AIRBUS220, plane1.getPlane());
     }
 
