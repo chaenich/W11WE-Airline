@@ -33,16 +33,20 @@ public class FlightTest {
     }
 
     @Test
-    public void canAddOnePassenger() {
-        flight.addPassenger(passenger1);
-        assertEquals(1, flight.numberOfBookedPassengers());
-    }
-
-    @Test
     public void canCheckTwoPassengersBooked() {
         flight.addPassenger(passenger1);
         flight.addPassenger(passenger2);
         assertEquals(2, flight.numberOfBookedPassengers());
+    }
+
+    @Test
+    public void canGetAllBookedPassengers() {
+        flight.addPassenger(passenger1);
+        flight.addPassenger(passenger2);
+        flight.addPassenger(passenger3);
+        flight.addPassenger(passenger4);
+        assertEquals(this.bookedPassengers, flight.getBookedPassengers());
+        assertEquals(4, flight.numberOfBookedPassengers());
     }
 
     @Test

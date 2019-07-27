@@ -20,6 +20,10 @@ public class Flight {
 
     }
 
+    public ArrayList<Passenger> getBookedPassengers() {
+        return this.bookedPassengers;
+    }
+
     public int numberOfBookedPassengers() {
         return this.bookedPassengers.size();
     }

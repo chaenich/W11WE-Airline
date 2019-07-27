@@ -22,17 +22,6 @@ public class PlaneTest {
     public void canGetWeight() {
         assertEquals(3000, plane1.getWeightFromEnum());
     }
-    @Test
-    public void canGetReservedBaggageWeight() {
-        assertEquals(1500, plane1.getReservedBaggageWeight());
-    }
-    @Test
-    public void canGetWeightPerBag() {
-        assertEquals(15, plane1.getWeightPerBag());
-    }
-    @Test
-    public void canGetBaggageAllowancePerPassenger() {
-        assertEquals(15, plane1.getBaggageAllowancePerPassenger());
-    }
+
 
 }
