@@ -4,7 +4,7 @@ public enum PlaneType {
     BOEING767(200, 1200),
     BOEING777(225, 1300),
     AIRBUS220(3, 800),
-    AIRBUS330(100, 900),
+    AIRBUS330(100, 3000),
     AIRBUS350(120, 950),
     AIRBUS380(250, 1500);
 

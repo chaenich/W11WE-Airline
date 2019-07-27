@@ -8,21 +8,31 @@ public class PlaneTest {
 
     @Before
     public void before() {
-        plane1 = new Plane(PlaneType.AIRBUS220);
+        plane1 = new Plane(PlaneType.AIRBUS330);
     }
-
     @Test
     public void canGetPlaneType() {
-        assertEquals(PlaneType.AIRBUS220, plane1.getPlane());
+        assertEquals(PlaneType.AIRBUS330, plane1.getPlane());
     }
-
     @Test
     public void canGetCapacity() {
-        assertEquals(3, plane1.getCapacityFromEnum());
+        assertEquals(100, plane1.getCapacityFromEnum());
     }
-
     @Test
     public void canGetWeight() {
-        assertEquals(800, plane1.getWeightFromEnum());
+        assertEquals(3000, plane1.getWeightFromEnum());
     }
+    @Test
+    public void canGetReservedBaggageWeight() {
+        assertEquals(1500, plane1.getReservedBaggageWeight());
+    }
+    @Test
+    public void canGetWeightPerBag() {
+        assertEquals(15, plane1.getWeightPerBag());
+    }
+    @Test
+    public void canGetBaggageAllowancePerPassenger() {
+        assertEquals(15, plane1.getBaggageAllowancePerPassenger());
+    }
+
 }

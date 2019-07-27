@@ -36,6 +36,14 @@ public class Flight {
         return this.plane.getPlane();
     }
 
+    public int getPlaneCapacity() {
+        return this.plane.getCapacityFromEnum();
+    }
+
+    public int getPlaneWeight() {
+        return this.plane.getWeightFromEnum();
+    }
+
     public String getFlightNumber() {
         return this.flightNumber;
     }
@@ -53,7 +61,7 @@ public class Flight {
     }
 
     public int seatsFree() {
-        return this.plane.getCapacityFromEnum() - this.bookedPassengers.size();
+        return getPlaneCapacity() - numberOfBookedPassengers();
     }
 
     public void bookInPassenger(Passenger passenger) {

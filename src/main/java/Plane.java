@@ -16,4 +16,17 @@ public class Plane {
     public int getWeightFromEnum() {
         return this.plane.getWeight();
     }
+
+    public int getReservedBaggageWeight() {
+        return getWeightFromEnum() / 2;
+    }
+    public int getWeightPerBag() {
+        return getReservedBaggageWeight() / getCapacityFromEnum();
+    }
+
+    // This is same as getWeightPerBag() but creating as getWeightPerBag() doesn't really allow
+    // for multiple bags and this makes more sense
+    public int getBaggageAllowancePerPassenger() {
+        return getReservedBaggageWeight() / getCapacityFromEnum();
+    }
 }
