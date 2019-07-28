@@ -58,7 +58,7 @@ public class FlightManager {
             midIndex = (int) Math.ceil((double) passengers.size() / 2);
         }
         int midPoint = passengers.get(midIndex).getSeatNumber();
-        if (seatNumber == midPoint) {
+        if (seatNumber == midPoint)  {
             return passengers.get(midIndex).getName();
         }
         ArrayList<Passenger> newSearchArea;
