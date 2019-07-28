@@ -8,7 +8,7 @@ public class PassengerTest {
 
     @Before
     public void before() {
-        passenger1 = new Passenger("Bob", 2);
+        passenger1 = new Passenger("Bob", 2, 22);
     }
 
     @Test
@@ -20,4 +20,10 @@ public class PassengerTest {
     public void canGetNumberOfBags() {
         assertEquals(2, passenger1.getNumBags());
     }
+
+    @Test
+    public void canGetSeatNumber() {
+        assertEquals(22, passenger1.getSeatNumber());
+    }
+
 }

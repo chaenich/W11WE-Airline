@@ -17,10 +17,10 @@ public class FlightManagerTest {
 
     @Before
     public void before() {
-        passenger1 = new Passenger("Jim", 1);
-        passenger2 = new Passenger("Helen", 2);
-        passenger3 = new Passenger("Bob", 3);
-        passenger4 = new Passenger("Jane", 2);
+        passenger1 = new Passenger("Jim", 1, 0);
+        passenger2 = new Passenger("Helen", 2, 0);
+        passenger3 = new Passenger("Bob", 3, 0);
+        passenger4 = new Passenger("Jane", 2, 0);
         bookedPassengers = new ArrayList<Passenger>();
         plane1 = new Plane(PlaneType.AIRBUS330);
         flight1 = new Flight(bookedPassengers, plane1, "GLA123",
@@ -46,19 +46,19 @@ public class FlightManagerTest {
 
     @Test
     public void canCalculateBaggageWeightForAllBookedCustomers() {
-        flight1.addPassenger(passenger1);
-        flight1.addPassenger(passenger2);
-        flight1.addPassenger(passenger3);
-        flight1.addPassenger(passenger4);
+        flight1.bookInPassenger(passenger1);
+        flight1.bookInPassenger(passenger2);
+        flight1.bookInPassenger(passenger3);
+        flight1.bookInPassenger(passenger4);
         assertEquals(120, flightManager.baggageWeightForAllBookedCustomers());
     }
 
     @Test
     public void canCalculateRemainingBaggageWeightReservation() {
-        flight1.addPassenger(passenger1);
-        flight1.addPassenger(passenger2);
-        flight1.addPassenger(passenger3);
-        flight1.addPassenger(passenger4);
+        flight1.bookInPassenger(passenger1);
+        flight1.bookInPassenger(passenger2);
+        flight1.bookInPassenger(passenger3);
+        flight1.bookInPassenger(passenger4);
         assertEquals(1380, flightManager.remainingBaggageWeightReservation());
     }
 

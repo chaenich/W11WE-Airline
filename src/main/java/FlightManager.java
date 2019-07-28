@@ -1,5 +1,5 @@
 public class FlightManager {
-    Flight flight;
+    private Flight flight;
 
     public FlightManager(Flight flight) {
         this.flight = flight;
