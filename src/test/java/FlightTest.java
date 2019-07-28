@@ -42,17 +42,11 @@ public class FlightTest {
     public void canCheckTwoPassengersBooked() {
         flight.bookInPassenger(passenger1);
         flight.bookInPassenger(passenger2);
-//        flight.addPassenger(passenger1);
-//        flight.addPassenger(passenger2);
         assertEquals(2, flight.numberOfBookedPassengers());
     }
 
     @Test
     public void canGetAllBookedPassengers() {
-//        flight.addPassenger(passenger1);
-//        flight.addPassenger(passenger2);
-//        flight.addPassenger(passenger3);
-//        flight.addPassenger(passenger4);
         flight.bookInPassenger(passenger1);
         flight.bookInPassenger(passenger2);
         flight.bookInPassenger(passenger3);
@@ -149,6 +143,7 @@ public class FlightTest {
         flight.bookInPassenger(passenger3);
         flight.bookInPassenger(passenger4);
         flight.bookInPassenger(passenger5);
+
         assertEquals(false, flight.seatIsAvailable(passenger1.getSeatNumber()));
         assertEquals(false, flight.seatIsAvailable(passenger2.getSeatNumber()));
         assertEquals(false, flight.seatIsAvailable(passenger3.getSeatNumber()));

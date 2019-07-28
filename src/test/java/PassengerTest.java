@@ -22,6 +22,12 @@ public class PassengerTest {
     }
 
     @Test
+    public void canSetSeatNumber() {
+        passenger1.setSeatNumber(45);
+        assertEquals(45, passenger1.getSeatNumber());
+    }
+
+    @Test
     public void canGetSeatNumber() {
         assertEquals(22, passenger1.getSeatNumber());
     }

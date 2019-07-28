@@ -86,7 +86,27 @@ public class FlightManagerTest {
         flight1.bookInPassenger(passenger8);
         flight1.bookInPassenger(passenger9);
         flight1.bookInPassenger(passenger10);
-        assertEquals(0, flightManager.sortPassengersBySeatNumber(flight1.getBookedPassengers()));
+        assertEquals(true, flightManager.sortPassengersBySeatNumber(flight1.getBookedPassengers()));
     }
 
+    @Test
+    public void CanFindPassengerNameBySeatNumber() {
+        flight1.bookInPassenger(passenger1);
+        flight1.bookInPassenger(passenger2);
+        flight1.bookInPassenger(passenger3);
+        flight1.bookInPassenger(passenger4);
+        flight1.bookInPassenger(passenger5);
+        flight1.bookInPassenger(passenger6);
+        flight1.bookInPassenger(passenger7);
+        flight1.bookInPassenger(passenger8);
+
+        flightManager.sortPassengersBySeatNumber(flight1.getBookedPassengers());
+        ArrayList<Passenger> passengers = flight1.getBookedPassengers();
+        // Look for whatever passenger is at index 2
+        String name = passengers.get(6).getName().toString();
+        int seat = passengers.get(6).getSeatNumber();
+
+        assertEquals(name, flightManager.findPassengerBySeatNumber(passengers, seat));
+
+    }
 }

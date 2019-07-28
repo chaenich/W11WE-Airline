@@ -88,7 +88,6 @@ public class Flight {
         int allocatedSeatIndex;
 
         Random rand = new Random();
-
         allocatedSeatIndex = rand.nextInt(availableSeats.size());
         allocatedSeat = availableSeats.get(allocatedSeatIndex);
         availableSeats.remove(allocatedSeatIndex);
